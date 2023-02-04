@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/flutter_pragma.feature",
         glue = {"org.example.stepdefinitions"},
+//        tags = "@Formulario",
         snippets = SnippetType.CAMELCASE
 )
 public class FlutterPragmaRunner {

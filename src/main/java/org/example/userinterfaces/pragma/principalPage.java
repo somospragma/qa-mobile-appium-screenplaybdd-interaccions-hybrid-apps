@@ -50,14 +50,13 @@ public class principalPage {
     public static final Locator CARD_DATEPICKER_LOCATOR = locator().withAndroidAccesibilityId("DatePicker screeen").withIosAccesibilityId("1");
     public static final Target CARD_DATEPICKER = Target.the("Seleccionar  dialogs demo botones").located(theElementBy(CARD_DATEPICKER_LOCATOR));
 
-
-    public static final Locator INPUT_FECHA_LOCATOR = locator().withAndroidXpathStatic("//android.view.View[@content-desc='Date Picker']/following::android.view.View[1]").withIosAccesibilityId("1");
+    public static final Locator INPUT_FECHA_LOCATOR = locator().withAndroidXpathStatic("//android.view.View[@content-desc='Date Picker']/following-sibling::android.view.View[1]").withIosAccesibilityId("1");
     public static final Target INPUT_FECHA = Target.the("Selector de fecha").located(theElementBy(INPUT_FECHA_LOCATOR));
 
-    public static final Locator BTN_EDITAR_FECHA_LOCATOR = locator().withAndroidXpathStatic("//android.widget.Button[@content-desc='Select year']/preceding::android.widget.Button").withIosAccesibilityId("1");
+    public static final Locator BTN_EDITAR_FECHA_LOCATOR = locator().withAndroidXpathStatic("//android.widget.Button[@content-desc='Select year']/preceding-sibling::android.widget.Button").withIosAccesibilityId("1");
     public static final Target BTN_EDITAR_FECHA = Target.the("Editar de fecha").located(theElementBy(BTN_EDITAR_FECHA_LOCATOR));
 
-    public static final Locator INPUT_EDITAR_FECHA_LOCATOR = locator().withAndroidXpathStatic("//android.widget.Button[@content-desc='CANCEL']/preceding::android.widget.EditText").withIosAccesibilityId("1");
+    public static final Locator INPUT_EDITAR_FECHA_LOCATOR = locator().withAndroidXpathStatic("//android.widget.Button[@content-desc='CANCEL']/preceding-sibling::android.widget.EditText").withIosAccesibilityId("1");
     public static final Target INPUT_EDITAR_FECHA = Target.the("Selector de fecha").located(theElementBy(INPUT_EDITAR_FECHA_LOCATOR));
 
 
@@ -73,13 +72,13 @@ public class principalPage {
 
 
 
-    public static final Locator SWITCH_LOCATOR = locator().withAndroidXpathStatic("//android.view.View[@content-desc='Switch'][2]/following::android.widget.Switch[1]").withIosAccesibilityId("1");
+    public static final Locator SWITCH_LOCATOR = locator().withAndroidXpathStatic("//android.view.View[@content-desc='Switch'][2]/following-sibling::android.widget.Switch[1]").withIosAccesibilityId("1");
     public static final Target SWITCH = Target.the("presionar switch").located(theElementBy(SWITCH_LOCATOR));
 
-    public static final Locator SWITCH_TILE_LOCATOR = locator().withAndroidXpathStatic("//android.view.View[@content-desc='Switch'][2]/following::android.widget.Switch[2]").withIosAccesibilityId("1");
+    public static final Locator SWITCH_TILE_LOCATOR = locator().withAndroidXpathStatic("//android.view.View[@content-desc='Switch'][2]/following-sibling::android.widget.Switch[2]").withIosAccesibilityId("1");
     public static final Target SWITCH_TILE = Target.the("presionar switch tile").located(theElementBy(SWITCH_TILE_LOCATOR));
 
-    public static final Locator TXT_SWITCH_TILE_LOCATOR = locator().withAndroidXpathStatic("//android.widget.Switch[@content-desc='Habilitar Switch']/following::android.view.View").withIosAccesibilityId("1");
+    public static final Locator TXT_SWITCH_TILE_LOCATOR = locator().withAndroidXpathStatic("//android.widget.Switch[@content-desc='Habilitar Switch']/following-sibling::android.view.View").withIosAccesibilityId("1");
     public static final Target TXT_SWITCH_TILE = Target.the("Texto al activar switch").located(theElementBy(TXT_SWITCH_TILE_LOCATOR));
 
     //################drop down list

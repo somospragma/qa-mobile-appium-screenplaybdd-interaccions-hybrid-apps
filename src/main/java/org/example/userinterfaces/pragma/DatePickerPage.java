@@ -12,7 +12,7 @@ public class DatePickerPage {
     public static final Locator BUSCAR_MES_LOCATOR = locator().withAndroidAccesibilityId("Select year").withIosAccesibilityId("1");
   //  public static final Locator SELECCIONAR_DIA_LOCATOR = locator().withAndroidAccesibilityId("10, Saturday, October 10, 1992").withIosAccesibilityId("1");
     public static final Locator SELECCIONAR_DIA_LOCATOR = locator().withAndroidAccesibilityId("Start date 17, Tuesday, January 17, 2023").withIosAccesibilityId("1");
-    public static final Locator SCROLL_LOCATOR = locator().withAndroidXpathStatic("//android.widget.Button[@content-desc='CANCEL']/preceding::android.view.View[1]").withIosAccesibilityId("1");
+    public static final Locator SCROLL_LOCATOR = locator().withAndroidXpathStatic("//android.widget.Button[@content-desc='CANCEL']/preceding-sibling::android.view.View[1]").withIosAccesibilityId("1");
     public static final Locator ANIO_ACTUAL_LOCATOR = locator().withAndroidAccesibilityId("2022").withIosAccesibilityId("1");
     public static final Target SELECCIONAR_ANIO = Target.the("Seleccionar año").located(theElementBy(SELECCIONAR_ANIO_LOCATOR));
     public static final Target BUSCAR_ANIO = Target.the("Seleccionar año 1992").located(theElementBy(BUSCAR_ANIO_LOCATOR));

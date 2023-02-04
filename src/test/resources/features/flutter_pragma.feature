@@ -11,6 +11,7 @@ Característica: Como cliente de app flutter deseo interactuar con los elementos
     Cuando interactua con el calendario
 
   #OK
+  @Formulario
   Escenario: interactuar con elementos formulario
     Dado que Kedyn quiere iniciar pruebas en flutter
     Cuando interactua con el formulario

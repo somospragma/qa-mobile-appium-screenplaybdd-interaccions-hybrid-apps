@@ -9,6 +9,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import net.serenitybdd.screenplay.waits.WaitUntilTargetIsReady;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -51,6 +52,7 @@ public class InteractuarConFormulario implements Task {
                 Click.on(BOTON_VALIDAR));
 
         actor.attemptsTo(
+                Hide.theKeyboard(),
                 Click.on(CAMPO_NOMBRE),
                 Enter.theValue("Kedyn").into(CAMPO_NOMBRE),
                 Hide.theKeyboard(),
@@ -59,12 +61,13 @@ public class InteractuarConFormulario implements Task {
                 Enter.theValue("3004440000").into(CAMPO_CELULAR),
                 Hide.theKeyboard(),
                 Click.on(CAMPO_CLAVE),
+                Hide.theKeyboard(),
                 Enter.theValue("1245").into(CAMPO_CLAVE),
                 Hide.theKeyboard(),
-                Scroll.untilVisibleTarget(BOTON_VALIDAR_DOS).toBottom().untilMaxAttempts(5),
+//                Scroll.untilVisibleTarget(BOTON_VALIDAR_DOS).toBottom().untilMaxAttempts(5),
                 Click.on(VER_OCULTAR_CLAVE),
-
                 Click.on(BOTON_VALIDAR_DOS),
+                Hide.theKeyboard(),
                 WaitUntil.the(MENSAJE_FORMULARIO_VALIDO, isVisible()).forNoMoreThan(3).seconds());
 
         actor.attemptsTo(Ensure.that(MENSAJE_FORMULARIO_VALIDO.resolveFor(actor).getAttribute("content-desc")).contains("Form is valid"));

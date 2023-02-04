@@ -31,9 +31,9 @@ public class FormularioPage {
     public static final Target CAMPO_NOMBRE = Target.the("Escribir nombre").located(theElementBy(CAMPO_NOMBRE_LOCATOR));
     public static final Locator CAMPO_CELULAR_LOCATOR = locator().withAndroidXpathStatic("//*[@class='android.widget.EditText'][4]").withIosAccesibilityId("1");
     public static final Target CAMPO_CELULAR = Target.the("Escribir celular").located(theElementBy(CAMPO_CELULAR_LOCATOR));
-    public static final Locator CAMPO_CLAVE_LOCATOR = locator().withAndroidXpathStatic("(//android.widget.Button[@content-desc='validar'])[2]/preceding::android.widget.EditText[1]").withIosAccesibilityId("1");
+    public static final Locator CAMPO_CLAVE_LOCATOR = locator().withAndroidXpathStatic("(//android.widget.Button[@content-desc='validar'])[2]/preceding-sibling::android.widget.EditText[5]").withIosAccesibilityId("1");
     public static final Target CAMPO_CLAVE = Target.the("Escribir contraseña").located(theElementBy(CAMPO_CLAVE_LOCATOR));
-    public static final Locator VER_OCULTAR_CLAVE_LOCATOR = locator().withAndroidXpathStatic("(//android.widget.Button[@content-desc='validar'])[2]/preceding::android.widget.Button[1]").withIosAccesibilityId("1");
+    public static final Locator VER_OCULTAR_CLAVE_LOCATOR = locator().withAndroidXpathStatic("(//android.widget.Button[@content-desc='validar'])[2]/preceding-sibling::android.widget.EditText[5]/android.widget.Button").withIosAccesibilityId("1");
     public static final Target VER_OCULTAR_CLAVE = Target.the("ocultar o mostrar contraseña").located(theElementBy(VER_OCULTAR_CLAVE_LOCATOR));
 
  public static final Locator MENSAJE_FORMULARIO_VALIDO_LOCATOR = locator().withAndroidAccesibilityId("Form is valid").withIosAccesibilityId("1");
