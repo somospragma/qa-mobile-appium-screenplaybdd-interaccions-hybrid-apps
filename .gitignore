@@ -1,0 +1,5 @@
+#Ignorar directorios de compilacion
+/target
+/.gradle
+/.idea
+/build
