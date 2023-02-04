@@ -1,5 +1,11 @@
 #Ignorar directorios de compilacion
-/target
-/.gradle
-/.idea
+target/*
+
+
+# Editor directories and files
+.idea/*
+
+#Archivos de gradel
+.gradle
+/gradle
 /build
