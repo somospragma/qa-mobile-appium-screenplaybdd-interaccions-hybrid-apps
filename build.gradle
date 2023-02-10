@@ -1,57 +1,89 @@
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'net.serenity-bdd.aggregator'
-
-sourceCompatibility = JavaVersion.VERSION_11
-
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 buildscript {
+    ext.serenityCoreVersion = '3.3.1'
     repositories {
         mavenCentral()
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
     }
     dependencies {
-        classpath('net.serenity-bdd:serenity-gradle-plugin:2.1.4')
+        classpath ("net.serenity-bdd:serenity-gradle-plugin:$serenityCoreVersion")
+        classpath ("net.serenity-bdd:serenity-single-page-report:$serenityCoreVersion")
     }
 }
 
+
+defaultTasks 'clean', 'test', 'aggregate', 'sonarqube'
+apply plugin: 'net.serenity-bdd.serenity-gradle-plugin'
+
 ext {
-    serenityVersion = '2.1.4'
-    serenityCucumberVersion = '1.9.51'
+    slf4jVersion = '1.7.7'
+    junitVersion = '5.8.2'
+    assertJVersion = '3.22.0'
+    log4jVersion = '2.17.1'
+    jsonSimpleVersion = '1.1.1'
+    restAssured = '4.4.0'
+
 }
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
 
 dependencies {
+//    implementation ("net.serenity-bdd:serenity-core:${serenityCoreVersion}"){
+//        exclude group: 'org.apache.groovy', module: 'groovy'
+//    }
+    implementation "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-junit5:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-cucumber:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}"
+
+    implementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    implementation "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    implementation "org.assertj:assertj-core:${assertJVersion}"
+    implementation "org.slf4j:slf4j-simple:${slf4jVersion}"
+
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.1.0'
+
     implementation "co.com.devco.automation:automationDevcoLibrary:2.0.2"
-    //implementation "com.qiip:test-automation-qiip-utils:1.7.2"
-    // implementation "com.qiip:base-lib_2.12:1.1.2"
     implementation "com.google.code.gson:gson:2.8.6"
-    implementation "io.appium:java-client:7.5.1"
-    implementation "net.serenity-bdd:serenity-rest-assured:$rootProject.ext.serenityVersion"
-    implementation "net.serenity-bdd:serenity-screenplay-rest:$rootProject.ext.serenityVersion"
-    implementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
-    implementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
-    implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
-    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
-    implementation "net.serenity-bdd:serenity-ensure:$rootProject.ext.serenityVersion"
+    implementation "io.appium:java-client:8.3.0"
+
+
+
     testImplementation "org.hamcrest:hamcrest-core:1.3"
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.assertj:assertj-core:3.14.0'
-    testImplementation 'org.slf4j:slf4j-simple:1.7.30'
+    testImplementation "org.assertj:assertj-core:${assertJVersion}"
 
 }
 
+test {
+    testLogging.showStandardStreams = true
+    maxParallelForks=3
+    systemProperties System.getProperties()
+}
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-
 tasks.withType(Test) {
     systemProperty "file.encoding", "UTF-8"
     maxParallelForks = 1
 }
+
+serenity {
+    reports = ["single-page-html"]
+}
+
+gradle.startParameter.continueOnFailure = true
+
 test.finalizedBy(aggregate)
