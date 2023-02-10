@@ -1,8 +1,7 @@
-package org.example.stepdefinitions;
+package org.example.hooks;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import io.appium.java_client.AppiumDriver;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -13,14 +12,13 @@ import org.openqa.selenium.WebDriver;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
-
 public class Hooks {
 
-    @Managed(driver = "Appium")
-    public static WebDriver driver;
-    private static boolean beforeAll = true;
     public static Actor pragma;
+    @Managed(driver = "Appium")
+    public WebDriver driver;
+    private boolean beforeAll = true;
+
 
     @Before(order = 1)
     public void setUp() {
@@ -37,21 +35,20 @@ public class Hooks {
 
     @Before(order = 2)
     public void prepareStage() {
-        OnStage.setTheStage(OnlineCast.whereEveryoneCan(BrowseTheWeb.with(getProxiedDriver())));
+        OnStage.setTheStage(new OnlineCast());
     }
 
     @Before(order = 3)
     public void prepareActor() {
         pragma = Actor.named("pragma");
-        pragma.can(BrowseTheWeb.with(driver));
+        pragma.can(BrowseTheWeb.with(driver).asActor(pragma));
+        pragma.entersTheScene();
     }
 
     @After
     public void logOut() {
         try {
-            AppiumDriver<?> facade = getProxiedDriver();
-            facade.closeApp();
-            facade.launchApp();
+            driver.quit();
         } catch (Exception ex) {
             Logger.getAnonymousLogger().log(Level.WARNING, "Could not close driver. AppiumDriver not found", ex);
         }
