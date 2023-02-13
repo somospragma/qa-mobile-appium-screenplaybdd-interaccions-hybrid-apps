@@ -2,9 +2,11 @@ package org.example.userinterfaces.pragma;
 
 import co.com.devco.automation.mobile.locator.Locator;
 import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.Point;
 
 import static co.com.devco.automation.mobile.locator.ElementFinder.theElementBy;
 import static co.com.devco.automation.mobile.locator.Locator.locator;
+import static org.example.models.Coordinates.withCoordinates;
 
 public class FormularioPage {
 
@@ -16,6 +18,10 @@ public class FormularioPage {
     public static final Locator INPUT_TWO_LOCATOR = locator().withAndroidXpathStatic("//*[@class='android.widget.EditText'][2]").withIosAccesibilityId("1");
     public static final Target INPUT_TWO = Target.the("Escribir en input dos").located(theElementBy(INPUT_TWO_LOCATOR));
 
+    public static final Point FIRST_OPTION_AUTOCOMPLETE = withCoordinates(150,730);
+    public static final Point SECOND_OPTION_AUTOCOMPLETE = withCoordinates(150,870);
+    public static final Point THIRD_OPTION_AUTOCOMPLETE = withCoordinates(150,990);
+    public static final Point FOURTH_OPTION_AUTOCOMPLETE = withCoordinates(150,1130);
     public static final Locator AUTOCOMPLETAR_NOMBRE_LOCATOR = locator().withAndroidXpathStatic("//android.view.View[@content-desc='Amaru']").withIosAccesibilityId("1");
     public static final Target AUTOCOMPLETAR_NOMBRE = Target.the("Seleccionar Amaru").located(theElementBy(AUTOCOMPLETAR_NOMBRE_LOCATOR));
 
@@ -36,7 +42,7 @@ public class FormularioPage {
     public static final Locator VER_OCULTAR_CLAVE_LOCATOR = locator().withAndroidXpathStatic("(//android.widget.Button[@content-desc='validar'])[2]/preceding-sibling::android.widget.EditText[5]/android.widget.Button").withIosAccesibilityId("1");
     public static final Target VER_OCULTAR_CLAVE = Target.the("ocultar o mostrar contraseña").located(theElementBy(VER_OCULTAR_CLAVE_LOCATOR));
 
- public static final Locator MENSAJE_FORMULARIO_VALIDO_LOCATOR = locator().withAndroidAccesibilityId("Form is valid").withIosAccesibilityId("1");
+    public static final Locator MENSAJE_FORMULARIO_VALIDO_LOCATOR = locator().withAndroidAccesibilityId("Form is valid").withIosAccesibilityId("1");
     public static final Target MENSAJE_FORMULARIO_VALIDO = Target.the("ocultar o mostrar contraseña").located(theElementBy(MENSAJE_FORMULARIO_VALIDO_LOCATOR));
 
 

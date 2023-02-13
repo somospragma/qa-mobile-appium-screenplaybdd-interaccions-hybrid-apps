@@ -7,25 +7,19 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.ScrollToTarget;
+
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.touch.TouchActions;
+
 
 import static co.com.devco.automation.mobile.actions.DragDirection.DOWN;
-import static co.com.devco.automation.mobile.actions.DragDirection.LEFT;
+
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-import static org.example.userinterfaces.pragma.CarouselPage.IMG;
+
 import static org.example.userinterfaces.pragma.DatePickerPage.ANIO_ACTUAL;
-import static org.example.userinterfaces.pragma.DatePickerPage.BUSCAR_ANIO;
-import static org.example.userinterfaces.pragma.DatePickerPage.SCROLL;
+
 import static org.example.userinterfaces.pragma.DatePickerPage.SELECCIONAR_ANIO;
-import static org.example.userinterfaces.pragma.DatePickerPage.SELECCIONAR_DIA;
+
 import static org.example.userinterfaces.pragma.principalPage.CARD_DATEPICKER;
 import static org.example.userinterfaces.pragma.principalPage.INPUT_FECHA;
 

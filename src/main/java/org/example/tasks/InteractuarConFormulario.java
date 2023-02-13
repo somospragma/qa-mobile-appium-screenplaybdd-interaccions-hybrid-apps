@@ -9,7 +9,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import net.serenitybdd.screenplay.waits.WaitUntilTargetIsReady;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -25,9 +24,7 @@ import static org.example.userinterfaces.pragma.FormularioPage.INPUT_TWO;
 import static org.example.userinterfaces.pragma.FormularioPage.MENSAJE_FORMULARIO_VALIDO;
 import static org.example.userinterfaces.pragma.FormularioPage.VALIDACION_CAMPO;
 import static org.example.userinterfaces.pragma.FormularioPage.VER_OCULTAR_CLAVE;
-import static org.example.userinterfaces.pragma.principalPage.BOTON_ATRAS;
 import static org.example.userinterfaces.pragma.principalPage.CARD_BUTTONS_DEMO;
-import static org.example.userinterfaces.pragma.principalPage.CARD_DIALOGS_DEMO;
 
 public class InteractuarConFormulario implements Task {
 
@@ -44,7 +41,6 @@ public class InteractuarConFormulario implements Task {
                 Click.on(AUTOCOMPLETAR_NOMBRE),
                 Click.on(BOTON_VALIDAR),
                 WaitUntil.the(VALIDACION_CAMPO, isVisible()).forNoMoreThan(5).seconds());
-
         actor.attemptsTo(Ensure.that(VALIDACION_CAMPO.resolveFor(actor).getAttribute("content-desc")).contains("field is empty"));
 
         actor.attemptsTo(Click.on(INPUT_TWO),
