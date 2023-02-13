@@ -1,9 +1,9 @@
 package org.example.stepdefinitions;
 
-import cucumber.api.java.es.Cuando;
-import cucumber.api.java.es.Dado;
-import cucumber.api.java.es.Entonces;
-import net.serenitybdd.screenplay.ensure.Ensure;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.es.Cuando;
+import io.cucumber.java.es.Entonces;
 import org.example.questions.ObtenerTextoSegunCampoFlutter;
 import org.example.questions.PresentarImagen;
 import org.example.tasks.InteractuarConCalendario;
@@ -18,7 +18,7 @@ import static org.example.userinterfaces.pragma.FormularioPage.MENSAJE_FORMULARI
 import static org.hamcrest.Matchers.equalTo;
 
 public class FlutterPragma {
-    @Dado("^que (.*) quiere iniciar pruebas en flutter$")
+    @Given("^que (.*) quiere iniciar pruebas en flutter$")
     public void quiereIniciarPruebasEnFlutter(String actor) {
         theActorCalled(actor).entersTheScene();
     }
@@ -41,7 +41,6 @@ public class FlutterPragma {
     @Entonces("^el usuario debe ver el mensaje (.*)$")
     public void verificaElMensajeDeSaludo(String mensaje) {
         theActorInTheSpotlight().should(seeThat(ObtenerTextoSegunCampoFlutter.presentaElMensaje(MENSAJE_FORMULARIO_VALIDO), equalTo(mensaje)));
-
     }
 
     @Entonces("^debe ver la imagen uno$")
