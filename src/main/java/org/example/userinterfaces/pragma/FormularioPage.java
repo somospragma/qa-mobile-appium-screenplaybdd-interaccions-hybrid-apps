@@ -1,6 +1,7 @@
 package org.example.userinterfaces.pragma;
 
 import co.com.devco.automation.mobile.locator.Locator;
+import io.appium.java_client.AppiumBy;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.Point;
 
@@ -10,8 +11,7 @@ import static org.example.models.Coordinates.withCoordinates;
 
 public class FormularioPage {
 
-    public static final Locator CARD_INPUT_LOCATOR = locator().withAndroidAccesibilityId("Inputs Screen ").withIosAccesibilityId("1");
-    public static final Target CARD_INPUT = Target.the("Diligenciar campo").located(theElementBy(CARD_INPUT_LOCATOR));
+    public static final Target CARD_INPUT = Target.the("Diligenciar campo").located(AppiumBy.accessibilityId("Inputs Screen "));
 
     public static final Locator INPUT_ONE_LOCATOR = locator().withAndroidXpathStatic("//*[@class='android.widget.EditText'][1]").withIosAccesibilityId("1");
     public static final Target INPUT_ONE = Target.the("Escribir en input uno").located(theElementBy(INPUT_ONE_LOCATOR));

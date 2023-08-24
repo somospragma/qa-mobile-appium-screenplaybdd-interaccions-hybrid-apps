@@ -1,6 +1,7 @@
 package org.example.userinterfaces.pragma;
 
 import co.com.devco.automation.mobile.locator.Locator;
+import io.appium.java_client.AppiumBy;
 import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.devco.automation.mobile.locator.ElementFinder.theElementBy;
@@ -8,8 +9,7 @@ import static co.com.devco.automation.mobile.locator.Locator.locator;
 
 public class principalPage {
 
-    public static final Locator CARD_BUTTONS_DEMO_LOCATOR = locator().withAndroidAccesibilityId("Buttons Demo").withIosAccesibilityId("1");
-    public static final Target CARD_BUTTONS_DEMO = Target.the("Seleccionar demo botones").located(theElementBy(CARD_BUTTONS_DEMO_LOCATOR));
+    public static final Target CARD_BUTTONS_DEMO = Target.the("Seleccionar demo botones").located(AppiumBy.accessibilityId("Buttons Demo"));
 
     public static final Locator TITULO_BUTTONS_DEMO_LOCATOR = locator().withAndroidAccesibilityId("Show Case Material ").withIosAccesibilityId("1");
     public static final Target TITULO_BUTTONS_DEMO = Target.the("Titulo demo botones").located(theElementBy(TITULO_BUTTONS_DEMO_LOCATOR));

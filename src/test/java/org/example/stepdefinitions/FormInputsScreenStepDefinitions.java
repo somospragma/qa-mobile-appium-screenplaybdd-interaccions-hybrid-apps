@@ -11,6 +11,7 @@ import org.example.interactions.Scroll;
 import org.example.interactions.TapOnCoordinates;
 import org.example.models.Direction;
 
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static org.example.hooks.Hooks.pragma;
 import static org.example.userinterfaces.pragma.FormularioPage.*;

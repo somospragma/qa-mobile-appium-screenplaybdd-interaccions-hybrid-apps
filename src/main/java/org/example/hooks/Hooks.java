@@ -17,28 +17,12 @@ public class Hooks {
     public static Actor pragma;
     @Managed(driver = "Appium")
     public WebDriver driver;
-    private boolean beforeAll = true;
-
 
     @Before(order = 1)
-    public void setUp() {
-        if (beforeAll) {
-            Runtime.getRuntime().addShutdownHook(new Thread() {
-                public void run() {
-                    driver.quit();
-                    driver = null;
-                }
-            });
-            beforeAll = false;
-        }
-    }
-
-    @Before(order = 2)
     public void prepareStage() {
         OnStage.setTheStage(new OnlineCast());
     }
-
-    @Before(order = 3)
+    @Before(order = 2)
     public void prepareActor() {
         pragma = Actor.named("pragma");
         pragma.can(BrowseTheWeb.with(driver).asActor(pragma));
