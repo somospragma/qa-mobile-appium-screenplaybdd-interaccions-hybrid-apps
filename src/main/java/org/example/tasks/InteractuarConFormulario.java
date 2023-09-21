@@ -24,7 +24,7 @@ import static org.example.userinterfaces.pragma.FormularioPage.INPUT_TWO;
 import static org.example.userinterfaces.pragma.FormularioPage.MENSAJE_FORMULARIO_VALIDO;
 import static org.example.userinterfaces.pragma.FormularioPage.VALIDACION_CAMPO;
 import static org.example.userinterfaces.pragma.FormularioPage.VER_OCULTAR_CLAVE;
-import static org.example.userinterfaces.pragma.principalPage.CARD_BUTTONS_DEMO;
+import static org.example.userinterfaces.pragma.PrincipalPage.CARD_BUTTONS_DEMO;
 
 public class InteractuarConFormulario implements Task {
 

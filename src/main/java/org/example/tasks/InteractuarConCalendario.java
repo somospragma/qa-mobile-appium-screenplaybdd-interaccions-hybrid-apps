@@ -1,8 +1,6 @@
 package org.example.tasks;
 
 import co.com.devco.automation.mobile.actions.Drag;
-import co.com.devco.automation.mobile.actions.Scroll;
-import io.appium.java_client.PerformsTouchActions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -20,8 +18,8 @@ import static org.example.userinterfaces.pragma.DatePickerPage.ANIO_ACTUAL;
 
 import static org.example.userinterfaces.pragma.DatePickerPage.SELECCIONAR_ANIO;
 
-import static org.example.userinterfaces.pragma.principalPage.CARD_DATEPICKER;
-import static org.example.userinterfaces.pragma.principalPage.INPUT_FECHA;
+import static org.example.userinterfaces.pragma.PrincipalPage.CARD_DATEPICKER;
+import static org.example.userinterfaces.pragma.PrincipalPage.INPUT_FECHA;
 
 public class InteractuarConCalendario implements Task {
 

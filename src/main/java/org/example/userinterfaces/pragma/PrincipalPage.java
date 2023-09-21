@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import static co.com.devco.automation.mobile.locator.ElementFinder.theElementBy;
 import static co.com.devco.automation.mobile.locator.Locator.locator;
 
-public class principalPage {
+public class PrincipalPage {
 
     public static final Target CARD_BUTTONS_DEMO = Target.the("Seleccionar demo botones").located(AppiumBy.accessibilityId("Buttons Demo"));
 
@@ -108,7 +108,7 @@ public class principalPage {
 
 
 
-    private principalPage() {
+    private PrincipalPage() {
         throw new IllegalStateException("user interface class");
     }
 }

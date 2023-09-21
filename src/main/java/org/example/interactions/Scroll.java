@@ -4,7 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.targets.Target;
-import org.example.models.Direction;
+import org.example.models.ScrollDirection;
 import org.example.interactions.builders.ScrollBuilder;
 
 import org.openqa.selenium.interactions.PointerInput;
@@ -19,9 +19,9 @@ import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxie
 public class Scroll implements Interaction {
     private final Target target;
     private final int attempts;
-    private final Direction direction;
+    private final ScrollDirection direction;
 
-    public Scroll(Target target, Direction direction,int attempts) {
+    public Scroll(Target target, ScrollDirection direction, int attempts) {
         this.target = target;
         this.direction = direction;
         this.attempts = attempts;
@@ -31,7 +31,7 @@ public class Scroll implements Interaction {
         return new ScrollBuilder().untilVisibleTarget(target);
     }
 
-    public static ScrollBuilder direction(Direction direction){
+    public static ScrollBuilder direction(ScrollDirection direction){
         return new ScrollBuilder().direction(direction);
     }
 
@@ -42,7 +42,7 @@ public class Scroll implements Interaction {
         var dimension = driver.manage().window().getSize();
         int centerX = dimension.width / 2;
         int startY = dimension.height / 2;
-        int endY = (direction.equals(Direction.TO_BOTTOM)) ? (dimension.height / 4) : (dimension.height - (dimension.height / 4));
+        int endY = (direction.equals(ScrollDirection.TO_BOTTOM)) ? (dimension.height / 4) : (dimension.height - (dimension.height / 4));
 
         var currentAttempt = 0;
          do {

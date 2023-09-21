@@ -13,7 +13,7 @@ Característica: Como cliente de app flutter deseo interactuar con los elementos
   #OK
 
 #  #OK
-  @test2
+  @carousel
   Escenario: interactuar con elementos del carousel
     Dado que Kedyn quiere iniciar pruebas en flutter
     Cuando interactua con el carousel
