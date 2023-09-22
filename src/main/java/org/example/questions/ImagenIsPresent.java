@@ -5,9 +5,9 @@ import net.serenitybdd.screenplay.Question;
 
 import static org.example.userinterfaces.pragma.CarouselPage.IMG;
 
-public class PresentarImagen implements Question<Boolean> {
-    public static PresentarImagen delCarousel() {
-        return new PresentarImagen();
+public class ImagenIsPresent implements Question<Boolean> {
+    public static ImagenIsPresent delCarousel() {
+        return new ImagenIsPresent();
     }
 
     @Override

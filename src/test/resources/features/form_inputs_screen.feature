@@ -5,12 +5,10 @@ Feature: Filling out the form
   Scenario Outline: interaction with the first form with autocomplete
     Given the user is in Inputs Screen
     When fill out the name with the <option> suggest with <letter>
-#    Then el usuario debe ver el mensaje Form is valid
 
     Examples:
       | option | letter |
       | first  | a      |
-#      | first |b|
-#      | first |c|
+
 
 
