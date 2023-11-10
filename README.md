@@ -12,7 +12,7 @@ Requisitos del proyecto:
 
 ## **Run tests Chrome gradle:**
 ```
-./gradle clean test -Dcontext=chrome -Dwebdriver.driver=chrome
-./gradle test --tests "****" -Dcontext=chrome -Dwebdriver.driver=chrome
+./gradle clean test 
+./gradle test --tests "****"
 ```
 
