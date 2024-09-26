@@ -60,12 +60,12 @@ Proyecto de automatizacion mobiles con screenplay y appium de app desarrollada c
 
 ## Tecnologias
 ### This project required:
-* [Gradle]: version 7.4 
-* [JDk]: version 11
-* [Android SDK]: lastVersion
-* [Serenity]: version 3.9.1
-* [Appium_java_client]: version 8.3.0
-* [Appium]: version 2.0.1
+* [Gradle] : version 7.4 
+* [JDk] : version 11
+* [Android-SDK] : lastVersion
+* [Serenity] : version 3.9.1
+* [Appium_java_client] : version 8.3.0
+* [Appium] : version 2.0.1
   
 ## Consideraciones
 * Para que el proyecto funcione debe preparar el entorno de ejecución, lo cual incluye tener instalados y en las variables de entorno de la maquina el SDK de JAVA, el SDK de Android, Appium
