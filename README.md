@@ -2,7 +2,7 @@
   <br>
   <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://f.hubspotusercontent20.net/hubfs/2829524/Copia%20de%20LOGOTIPO_original-2.png"></a>
   <br>
-  qa-mobile-serenity-appium-browserstack-sdk
+  qa-mobile-appium-screenplaybdd-interaccions-hybrid-apps
   <br>
 </h1>
 
